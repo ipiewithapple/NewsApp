@@ -1,0 +1,21 @@
+{
+  "name": "webpackconf",
+  "version": "1.0.0",
+  "description": "Simple webpack conf",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production --colors --progress",
+    "dev": "webpack --mode development --colors --progress",
+    "start": "webpack-dev-server --mode development --colors --progress"
+  },
+  "author": "iPie",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  }
+}
