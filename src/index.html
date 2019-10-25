@@ -1,12 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+    /* label color */
+    .input-field label {
+      color: #fff;
+    }
+
+    .input-field label.active {
+      color: #fff !important;
+    }
+
+    /* label focus color */
+    .input-field input[type=text]:focus+label {
+      color: #fff;
+    }
+
+    /* label underline focus color */
+    .input-field input[type=text]:focus {
+      border-bottom: 1px solid #fff;
+      box-shadow: 0 1px 0 0 #fff;
+    }
+
+    /* valid color */
+    .input-field input[type=text].valid {
+      border-bottom: 1px solid #fff;
+      box-shadow: 0 1px 0 0 #fff;
+    }
+
+    /* invalid color */
+    .input-field input[type=text].invalid {
+      border-bottom: 1px solid #fff;
+      box-shadow: 0 1px 0 0 #fff;
+    }
+
+    /* icon prefix focus color */
+    .input-field .prefix.active {
+      color: #fff;
+    }
+
+    #search {
+      color: #fff;
+      border-bottom: 1px solid #fff;
+    }
+  </style>
   <title>Document</title>
 </head>
-<body>
 
+<body>
+  <header class="header blue white-text">
+    <div class="container">
+      <div class="row valign-wrapper" style="flex-wrap: wrap;">
+        <h1 class="col s12 m12 l3" style="margin: 10px 0;">SNews</h1>
+        <div class="input-field col s12 m12 l3">
+          <select id="countries" class="browser-default blue-text">
+            <option value="all">Все страны</option>
+            <option value="ru">Россия</option>
+            <option value="us">США</option>
+          </select>
+        </div>
+        <div class="input-field col s12 m12 l3">
+          <select id="categories" class="browser-default blue-text">
+            <option value="">Все новости</option>
+            <option value="business">Бизнес</option>
+            <option value="entertainment">Развлечения</option>
+          </select>
+        </div>
+        <div class="input-field col s12 m12 l3">
+          <i class="material-icons prefix">search</i>
+          <input id="search" type="text" class="validate">
+          <label for="search">Поиск</label>
+        </div>
+      </div>
+
+    </div>
+  </header>
+  <main class="main">
+    <div class="container">
+
+    </div>
+  </main>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>
