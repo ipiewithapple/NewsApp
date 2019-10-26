@@ -10,7 +10,6 @@
   <!-- Styles -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <style>
-    /* label color */
     .input-field label {
       color: #fff;
     }
@@ -19,37 +18,55 @@
       color: #fff !important;
     }
 
-    /* label focus color */
     .input-field input[type=text]:focus+label {
       color: #fff;
     }
 
-    /* label underline focus color */
     .input-field input[type=text]:focus {
       border-bottom: 1px solid #fff;
-      box-shadow: 0 1px 0 0 #fff;
+      box-shadow: 0 0 0 0 #fff !important;
     }
 
-    /* valid color */
-    .input-field input[type=text].valid {
-      border-bottom: 1px solid #fff;
-      box-shadow: 0 1px 0 0 #fff;
-    }
-
-    /* invalid color */
-    .input-field input[type=text].invalid {
-      border-bottom: 1px solid #fff;
-      box-shadow: 0 1px 0 0 #fff;
-    }
-
-    /* icon prefix focus color */
     .input-field .prefix.active {
       color: #fff;
     }
 
+    input.valid[type=text]:not(.browser-default) {
+      box-shadow: 0 0 0 0 #fff !important;
+    }
+
+    .input-field {
+      width: 70%;
+    }
+
+    .btn {
+      width: 30%;
+    }
+
     #search {
+      margin-right: 10px;
       color: #fff;
       border-bottom: 1px solid #fff;
+    }
+
+    .container-header {
+      margin: 0 auto;
+      max-width: 90% !important;
+      width: 90% !important;
+    }
+
+    .header {
+      padding: 1px 0;
+    }
+
+    .search-form {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .card {
+      height: 600px;
     }
   </style>
   <title>Document</title>
@@ -57,37 +74,51 @@
 
 <body>
   <header class="header blue white-text">
-    <div class="container">
+    <div class="container-header">
       <div class="row valign-wrapper" style="flex-wrap: wrap;">
         <h1 class="col s12 m12 l3" style="margin: 10px 0;">SNews</h1>
-        <div class="input-field col s12 m12 l3">
+        <div class="input-field col s12 m12 l2">
           <select id="countries" class="browser-default blue-text">
-            <option value="all">Все страны</option>
             <option value="ru">Россия</option>
+            <option value="ua">Украина</option>
+            <option value="de">Германия</option>
             <option value="us">США</option>
           </select>
         </div>
-        <div class="input-field col s12 m12 l3">
+        <div class="input-field col s12 m12 l2">
           <select id="categories" class="browser-default blue-text">
-            <option value="">Все новости</option>
+            <option value="">Топ новостей</option>
             <option value="business">Бизнес</option>
             <option value="entertainment">Развлечения</option>
+            <option value="health">Здоровье</option>
+            <option value="science">Наука</option>
+            <option value="sports">Спорт</option>
+            <option value="technology">Технологии</option>
           </select>
         </div>
-        <div class="input-field col s12 m12 l3">
-          <i class="material-icons prefix">search</i>
-          <input id="search" type="text" class="validate">
-          <label for="search">Поиск</label>
-        </div>
+        <form class="col s12 m12 l4 search-form">
+          <div class="input-field" style="display: flex;">
+            <i class="material-icons prefix">search</i>
+            <input id="search" type="text" class="validate" required>
+            <label for="search">Поиск</label>
+          </div>
+          <button type="submit" class="btn blue-text white waves-effect">Поиск</button>
+        </form>
       </div>
-
     </div>
   </header>
   <main class="main">
     <div class="container">
-
+      <div id="news-block" class="row">
+        <!-- Render news -->
+      </div>
     </div>
   </main>
+  <footer class="page-footer blue" style="padding: 20px 0;">
+    <div class="container">
+      <span>Powered by <a href="https://newsapi.org" class="white-text">NewsAPI.org</a></span>
+    </div>
+  </footer>
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
