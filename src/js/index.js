@@ -73,15 +73,21 @@ category.addEventListener('change', () => {
   getRequest(countriesNews, null, country.value, category.value)
 });
 
-searchBtn.addEventListener('click', () => {
-  if(!searchInput.value) {
+const search = () => {
+  if (!searchInput.value) {
     invalidInput.style.display = 'block';
   } else {
     getRequest(everethingNews, searchInput.value);
     invalidInput.style.display = 'none';
     searchInput.value = '';
   }
+}
 
-});
+searchBtn.addEventListener('click', search);
+searchInput.addEventListener('keydown', evt => {
+  if (evt.keyCode === 13) {
+    search();
+  }
+})
 
 getRequest(countriesNews, null, country.value, category.value);
