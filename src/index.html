@@ -68,6 +68,12 @@
     .card {
       height: 600px;
     }
+    .invalid {
+      display: none;
+      position: absolute;
+      bottom: -20px;
+      left: 10%;
+    }
   </style>
   <title>Document</title>
 </head>
@@ -96,14 +102,15 @@
             <option value="technology">Технологии</option>
           </select>
         </div>
-        <form class="col s12 m12 l4 search-form">
+        <div class="col s12 m12 l4 search-form">
           <div class="input-field" style="display: flex;">
             <i class="material-icons prefix">search</i>
-            <input id="search" type="text" class="validate" required>
+            <input id="search" type="text" required>
+            <span class="invalid red-text text-lighten-3">Введите запрос</span>
             <label for="search">Поиск</label>
           </div>
-          <button type="submit" class="btn blue-text white waves-effect">Поиск</button>
-        </form>
+          <button class="btn blue-text white waves-effect">Поиск</button>
+        </div>
       </div>
     </div>
   </header>

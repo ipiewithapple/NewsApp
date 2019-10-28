@@ -7,7 +7,8 @@ const everethingNews = 'https://newsapi.org/v2/everything';
 const country = document.querySelector('#countries');
 const category = document.querySelector('#categories');
 const searchInput = document.querySelector('#search');
-const searchForm = document.querySelector('.search-form');
+const invalidInput = document.querySelector('.invalid');
+const searchBtn = document.querySelector('.btn');
 const newsBlock = document.querySelector('#news-block');
 
 // Select
@@ -72,9 +73,15 @@ category.addEventListener('change', () => {
   getRequest(countriesNews, null, country.value, category.value)
 });
 
-searchForm.addEventListener('submit', () => {
-  getRequest(everethingNews, searchInput.value);
+searchBtn.addEventListener('click', () => {
+  if(!searchInput.value) {
+    invalidInput.style.display = 'block';
+  } else {
+    getRequest(everethingNews, searchInput.value);
+    invalidInput.style.display = 'none';
+    searchInput.value = '';
+  }
 
 });
 
-getRequest(countriesNews, null, country.value, category.value)
+getRequest(countriesNews, null, country.value, category.value);
